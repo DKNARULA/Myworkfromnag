@@ -1,0 +1,86 @@
+﻿@model CampBooking.Models.ViewModels.bookNowViewModel
+
+@{
+    ViewData["Title"] = "Book Now";
+}
+
+<h1>Book Now</h1>
+@TempData["Success"]
+@TempData["availmsg"]
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="BookNow">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="campid" class="control-label">Camp ID</label>
+                <input asp-for="campid" class="form-control" readonly />
+                <span asp-validation-for="campid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="campName" class="control-label">Name</label>
+                <input asp-for="campName" class="form-control" readonly />
+                <span asp-validation-for="campName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="noofpeople" class="control-label">Capacity</label>
+                <input asp-for="noofpeople" class="form-control" required />
+                <span asp-validation-for="noofpeople" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="checkInDate" class="control-label">Check In Date</label>
+                <input asp-for="checkInDate" value="" class="form-control" id="indate" required />
+                <span asp-validation-for="checkInDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="checkOutDate" class="control-label">Check Out Date</label>
+                <input asp-for="checkOutDate" value="" class="form-control" id="outdate" required />
+                <span asp-validation-for="checkOutDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="billAddress" class="control-label">Billing Address</label>
+                <input asp-for="billAddress" class="form-control" required />
+                <span asp-validation-for="billAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="state" class="control-label">State</label>
+                <input asp-for="state" class="form-control" required />
+                <span asp-validation-for="state" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="country" class="control-label">Country</label>
+                <input asp-for="country" class="form-control" required />
+                <span asp-validation-for="country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pinCode" class="control-label">Pin Code</label>
+                <input asp-for="pinCode" class="form-control" required />
+                <span asp-validation-for="pinCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mobile" class="control-label">Mobile Number</label>
+                <input asp-for="mobile" class="form-control" required />
+                <span asp-validation-for="mobile" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="Book" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = date.getMonth();
+    var day = string(date.getDate().padStart(2, '0'));
+    var datepattern = year + '-' + month + '-' + day;
+    document.getElementById("indate").Value = datepattern;
+</script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

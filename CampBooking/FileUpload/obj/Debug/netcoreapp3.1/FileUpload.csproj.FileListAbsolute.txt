@@ -1,0 +1,9 @@
+C:\Users\dhruvnarula\source\repos\CampBooking\FileUpload\bin\Debug\netcoreapp3.1\FileUpload.deps.json
+C:\Users\dhruvnarula\source\repos\CampBooking\FileUpload\bin\Debug\netcoreapp3.1\FileUpload.dll
+C:\Users\dhruvnarula\source\repos\CampBooking\FileUpload\bin\Debug\netcoreapp3.1\FileUpload.pdb
+C:\Users\dhruvnarula\source\repos\CampBooking\FileUpload\obj\Debug\netcoreapp3.1\FileUpload.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dhruvnarula\source\repos\CampBooking\FileUpload\obj\Debug\netcoreapp3.1\FileUpload.AssemblyInfoInputs.cache
+C:\Users\dhruvnarula\source\repos\CampBooking\FileUpload\obj\Debug\netcoreapp3.1\FileUpload.AssemblyInfo.cs
+C:\Users\dhruvnarula\source\repos\CampBooking\FileUpload\obj\Debug\netcoreapp3.1\FileUpload.csproj.CoreCompileInputs.cache
+C:\Users\dhruvnarula\source\repos\CampBooking\FileUpload\obj\Debug\netcoreapp3.1\FileUpload.dll
+C:\Users\dhruvnarula\source\repos\CampBooking\FileUpload\obj\Debug\netcoreapp3.1\FileUpload.pdb

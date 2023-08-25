@@ -1,0 +1,133 @@
+﻿@model IEnumerable<CampBooking.Models.campDetails>
+
+@{
+    ViewData["Title"] = "Index";
+
+    Pager pager = new Pager();
+    int pageNo = 0;
+    if (ViewBag.Pager != null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+
+    }
+
+}
+
+<h1>Dashboard</h1>
+
+@*<div class="col-2">
+    <div class="col-md-4">
+        <form asp-action="Search">
+            <div class="form-group">
+                <label asp-for="checkInDate" class="control-label">Check In Date</label>
+                <input asp-for="checkInDate" class="form-control" />
+                <span asp-validation-for="checkInDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="noofpeople" class="control-label">Capacity</label>
+                <input asp-for="noofpeople" class="form-control" />
+                <span asp-validation-for="noofpeople" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="checkOutDate" class="control-label">Check Out Date</label>
+                <input asp-for="checkOutDate" class="form-control" />
+                <span asp-validation-for="checkOutDate" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Book" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>*@
+<div class="col-10">
+    <table class="table" @*style="width:75%"*@>
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.image)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.campName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.capacity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.desc)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+
+
+                @if (item.capacity > 0)
+                {
+                    <tr>
+                        <td>
+                            <img src="@item.image" height="100" asp-append-version="true" alt="Camp Image" />
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.campName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.capacity)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.desc)
+                        </td>
+                        <td>
+                            <a asp-action="BookNow" asp-route-id="@item.id">Book Now</a>
+                        </td>
+                    </tr>
+                }
+
+            }
+        </tbody>
+    </table>
+</div>
+<div class="container">
+    @if (pager.TotalPages > 0)
+    {
+    <ul class="pagination justify-content-end">
+        @for(var pge = pager.StartPage; pge < pager.EndPage; pge++)
+        {
+        <li class="page-item @(pge == pager.CurrentPage ? "active": "")">
+            <a class="page-link" asp-controller="Home" asp-action="Index" asp-route-pg="@pge">@pge</a>
+        </li>
+        }
+
+        @if (pager.CurrentPage < pager.TotalPages)
+        {
+            <li class="page-item">
+                <a class="page-link" asp-controller="Home" asp-action="Index" asp-route-pg="@(pager.CurrentPage+1)">Next</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" asp-controller="Home" asp-action="Index" asp-route-pg="@(pager.TotalPages)">Last</a>
+            </li>
+        }
+
+        @if (pager.CurrentPage > 1)
+        {
+            <li class="page-item">
+                <a class="page-link" asp-controller="Home" asp-action="Index" asp-route-pg="1)">First</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" asp-controller="Home" asp-action="Index" asp-route-pg="@(pager.CurrentPage-1)">Previous</a>
+            </li>
+        }
+
+    </ul>
+        
+    }
+</div>

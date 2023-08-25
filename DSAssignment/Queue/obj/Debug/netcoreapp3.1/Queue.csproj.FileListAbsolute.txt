@@ -1,0 +1,14 @@
+C:\Users\dhruvnarula\source\repos\DSAssignment\Queue\bin\Debug\netcoreapp3.1\Queue.exe
+C:\Users\dhruvnarula\source\repos\DSAssignment\Queue\bin\Debug\netcoreapp3.1\Queue.deps.json
+C:\Users\dhruvnarula\source\repos\DSAssignment\Queue\bin\Debug\netcoreapp3.1\Queue.runtimeconfig.json
+C:\Users\dhruvnarula\source\repos\DSAssignment\Queue\bin\Debug\netcoreapp3.1\Queue.runtimeconfig.dev.json
+C:\Users\dhruvnarula\source\repos\DSAssignment\Queue\bin\Debug\netcoreapp3.1\Queue.dll
+C:\Users\dhruvnarula\source\repos\DSAssignment\Queue\bin\Debug\netcoreapp3.1\Queue.pdb
+C:\Users\dhruvnarula\source\repos\DSAssignment\Queue\obj\Debug\netcoreapp3.1\Queue.csproj.AssemblyReference.cache
+C:\Users\dhruvnarula\source\repos\DSAssignment\Queue\obj\Debug\netcoreapp3.1\Queue.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dhruvnarula\source\repos\DSAssignment\Queue\obj\Debug\netcoreapp3.1\Queue.AssemblyInfoInputs.cache
+C:\Users\dhruvnarula\source\repos\DSAssignment\Queue\obj\Debug\netcoreapp3.1\Queue.AssemblyInfo.cs
+C:\Users\dhruvnarula\source\repos\DSAssignment\Queue\obj\Debug\netcoreapp3.1\Queue.csproj.CoreCompileInputs.cache
+C:\Users\dhruvnarula\source\repos\DSAssignment\Queue\obj\Debug\netcoreapp3.1\Queue.dll
+C:\Users\dhruvnarula\source\repos\DSAssignment\Queue\obj\Debug\netcoreapp3.1\Queue.pdb
+C:\Users\dhruvnarula\source\repos\DSAssignment\Queue\obj\Debug\netcoreapp3.1\Queue.genruntimeconfig.cache

@@ -1,0 +1,37 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject Microsoft.AspNetCore.Identity.SignInManager<IdentityUser> _signInManager
+
+
+@if (_signInManager.IsSignedIn(User))
+{
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="MyEvents" asp-action="Index">My Events</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="InvitedTo" asp-action="Index">Events Invited To</a>
+    </li>
+
+    <li>
+        <a asp-controller="Event" asp-action="Create" class="btn btn-primary">Create new Event</a>
+    </li>
+
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-dark" href="#" id="navbardropdown" data-toggle="dropdown">
+            Hello @User.Identity.Name
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbardropdown">
+            <a class="dropdown-item" asp-action="Logout" asp-controller="Account">Logout </a>
+        </div>
+
+    </li>
+}
+else
+{
+    <li class="nav-item ml-5 pl-xl-5 text-right">
+        <a class="float-right btn btn-outline-primary" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
+    </li>
+    <li class="nav-item pl-2">
+        <a class="float-right btn btn-primary" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+    </li>
+}

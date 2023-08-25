@@ -1,0 +1,85 @@
+﻿@model CampBooking.Models.BookingTable
+
+@{
+    ViewData["Title"] = "Find";
+}
+
+<h1>Camp Details</h1>
+
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.campName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.campName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.noofpeople)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.noofpeople)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.checkInDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.checkInDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.checkOutDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.checkOutDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.billAddress)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.billAddress)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.state)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.state)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.country)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.country)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.pinCode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.pinCode)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.mobile)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.mobile)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.amount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.amount)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Delete" asp-route-id="@Model.Id">Cancel</a> |
+    <a asp-action="Index">Back</a>
+</div>

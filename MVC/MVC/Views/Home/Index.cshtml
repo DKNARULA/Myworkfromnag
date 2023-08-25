@@ -1,0 +1,58 @@
+﻿@model IEnumerable<MVC.Models.Event>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Events Invited To</title>
+</head>
+<body>
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+    </div>
+
+    <div class="table-responsive">
+        <table class="mx-5 table-striped mt-8" style="width:65%" >
+            <thead>
+                <tr>
+                    <th>
+                        Past Events
+                    </th>
+                    <th>
+                        Future Events
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    @if (item.Type == "Public" || item.Type == "public")
+                    {
+                        <tr>
+                            @{DateTime target = item.Date;}
+                            @{DateTime today = DateTime.Today;}
+
+                            @if (target < today)
+                            {
+                                <td><a asp-controller="Event" asp-action="Details" asp-route-title="@item.Title"> @item.Title </a></td>
+                            }
+                            else
+                            {
+                                <td></td>
+                                <td><a asp-controller="Event" asp-action="Details" asp-route-title="@item.Title"> @item.Title </a></td>
+                            }
+                        </tr>
+
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

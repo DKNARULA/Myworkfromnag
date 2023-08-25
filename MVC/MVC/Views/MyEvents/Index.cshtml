@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+@model IEnumerable<MVC.Models.Event>
+@using Microsoft.AspNetCore.Identity
+@inject Microsoft.AspNetCore.Identity.SignInManager<IdentityUser> _signInManager
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <meta name="viewport" content="width=device-width" />
+    <title>My Events </title>
+</head>
+<body>
+    <div class="text-center">
+        <h2 class="text-primary mt-4">My Events (created by me)</h2>
+    </div>
+    <div class="list-group align-items-md-center">
+        @foreach (var item in Model)
+        {
+            <ol>
+                @if (User.Identity.Name == item.Userid)
+                {
+                    <li>
+                        <a asp-controller="Event" asp-action="Index"> @item.Title </a>
+
+                        <a asp-controller="Event" asp-action="Update" asp-route-title="@item.Title" class="btn btn-info btn-sm ml-3 pl-3">Update</a>
+
+                    </li>
+                }
+            </ol>
+        }
+
+    </div>
+
+</body>
+</html>
+
